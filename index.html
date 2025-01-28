@@ -13,56 +13,80 @@
         <style>
         html, body {
             background-color: #ffffff;
+            margin: 0;
+            padding: 0;
         }
+
         .ol-control > * {
             background-color: #f8f8f8!important;
             color: #444444!important;
             border-radius: 0px;
         }
+
         .ol-attribution a, .gcd-gl-input::placeholder, .search-layer-input-search::placeholder {
             color: #444444!important;
         }
+
         .search-layer-input-search {
             background-color: #f8f8f8!important;
         }
+
         .ol-control > *:focus, .ol-control >*:hover {
             background-color: rgba(248, 248, 248, 0.7)!important;
         } 
+
         .ol-control {
             background-color: rgba(255,255,255,.4) !important;
             padding: 2px !important;
         } 
-        /* Custom styles for title */
+
+        /* Styling for main title */
         #main-title {
             position: absolute;
             top: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background-color: rgba(255, 215, 0, 0.8); /* Gold transparent background */
-            padding: 15px 30px;
-            border-radius: 12px;
-            font-size: 32px;
+            background-color: #FFA500; /* Orange background */
+            padding: 18px 35px;
+            border-radius: 15px;
+            font-size: 34px;
             font-weight: bold;
-            color: #333333;
+            color: white;
             z-index: 1000;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow effect */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); /* Shadow effect */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow */
         }
 
+        /* Styling for subtitle */
         #subtitle {
             position: absolute;
-            top: 70px;
+            top: 85px;
             left: 50%;
             transform: translateX(-50%);
-            background-color: rgba(255, 255, 255, 0.7); /* White transparent background */
-            padding: 8px 20px;
-            border-radius: 8px;
-            font-size: 18px;
+            background-color: rgba(255, 255, 255, 0.8); /* Light transparent white */
+            padding: 10px 25px;
+            border-radius: 10px;
+            font-size: 20px;
             font-weight: normal;
             color: #555555;
-            z-index: 1000;
+            z-index: 999;
             text-align: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow effect */
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        /* Styling for small note */
+        #note {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: rgba(255, 255, 255, 0.7); /* Transparent white background */
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: normal;
+            color: #444444;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Light shadow */
         }
 
         html, body, #map {
@@ -72,7 +96,7 @@
             margin: 0;
         }
         </style>
-        <title>Sebaran Wisatawan di Jawa Timur 2024</title>
+        <title>JAWARA JATIM 2024</title>
     </head>
     <body>
         <div id="map">
@@ -82,11 +106,22 @@
             <!-- Subtitle -->
             <div id="subtitle">Jelajah Wisata dan Sebaran Wisatawan Jawa Timur 2024</div>
 
+            <!-- Popup Section -->
             <div id="popup" class="ol-popup">
                 <a href="#" id="popup-closer" class="ol-popup-closer"></a>
                 <div id="popup-content"></div>
             </div>
+
+            <!-- Small note at the bottom left corner -->
+            <div id="note">
+                Projek UAS PSIG<br>
+                Nama: Ahmad Farhan<br>
+                NIM: 112312951 / 2D31<br>
+                Dosen Pengampu: Dr. Ernawati Pasaribu, S.Si., ME.
+            </div>
         </div>
+
+        <!-- External Scripts -->
         <script src="resources/qgis2web_expressions.js"></script>
         <script src="./resources/functions.js"></script>
         <script src="./resources/ol.js"></script>
